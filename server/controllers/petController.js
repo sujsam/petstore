@@ -7,14 +7,14 @@ module.exports={
     index:function(request,response){
         pets.find()
         .then(data=>response.json(data))
-        .cach(err=>response.json(error));
+        .catch(err=>response.json(error));
     },
 
     details:function(request,response){
         
         pets.findOne({_id:request.params.id})
         .then(data=>response.json(data))
-        .cach(err=>response.json(error));
+        .catch(err=>response.json(error));
   
     },
 
@@ -29,7 +29,7 @@ module.exports={
         });
         pet.save()
         .then(data=>console.log(data))
-        .cach(err=>console.log(err));
+        .catch(err=>console.log(err));
     },
 
     update:function(request,response){
